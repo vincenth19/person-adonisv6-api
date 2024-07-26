@@ -6,14 +6,20 @@ export default class Person extends BaseModel {
   declare id: number
 
   @column()
-  declare firstName: string 
+  declare firstName: string
 
   @column()
-  declare lastName: string 
+  declare lastName: string
+
+  @column()
+  declare phoneNumber: string
+
+  @column()
+  declare dateOfBirth: Date
 
   @column.dateTime({ autoCreate: true })
   declare createdAt: DateTime
 
   @column.dateTime({ autoCreate: true, autoUpdate: true })
-  declare updatedAt: DateTime
+  declare updatedAt: DateTime | null
 }

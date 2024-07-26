@@ -7,7 +7,7 @@
 |
 */
 
-import PeopleController from '../app/controllers/people_controller.js'
+import PersonController from '#controllers/people_controller'
 import router from '@adonisjs/core/services/router'
 
 router.get('/', async () => {
@@ -16,4 +16,8 @@ router.get('/', async () => {
   }
 })
 
-router.get('/people',[ PeopleController, 'index'])
+router.get('/people', [PersonController, 'index'])
+router.get('/people/:id', [PersonController, 'searchId'])
+router.post('/people', [PersonController, 'create'])
+router.put('/people/:id', [PersonController, 'update'])
+router.delete('/people/:id', [PersonController, 'delete'])
